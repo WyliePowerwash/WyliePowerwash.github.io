@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Portfolio | How to Book</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Book a Wash | HydroBlast</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
     <nav>
-        <div class="logo">PORTFOLIO<span>.</span></div>
+        <div class="logo">Hydro<span>Blast</span></div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="book.html" class="active">How to Book</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="book.html" class="active">Book a Wash</a></li>
         </ul>
     </nav>
 
@@ -21,58 +21,59 @@
         <div class="split-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
             
             <section>
-                <h1 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 800;">How to <span>Book</span></h1>
-                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
-                    Ready to start a project or need custom engineering solutions? The process is straightforward.
+                <h1 style="font-size: 2.8rem; margin-bottom: 1.5rem; font-weight: 800;">Get Your <span>Quote</span></h1>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.1rem;">
+                    Scheduling an appointment or getting a square-footage estimate is simple. 
                 </p>
                 
                 <div style="margin-bottom: 1.5rem;">
-                    <h4 style="color: var(--accent); margin-bottom: 0.25rem;">1. Project Intake</h4>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Fill out the request form detailing your technical specifications, timeline, and scope.</p>
+                    <h4 style="color: var(--accent-glow); margin-bottom: 0.25rem; font-size: 1.1rem;">1. Submit Details</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Tell us what surfaces need detailing and provide your basic property scope layout.</p>
                 </div>
                 <div style="margin-bottom: 1.5rem;">
-                    <h4 style="color: var(--accent); margin-bottom: 0.25rem;">2. Consultation</h4>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">We'll map out the structural strategy, project boundaries, and clear pricing options.</p>
+                    <h4 style="color: var(--accent-glow); margin-bottom: 0.25rem; font-size: 1.1rem;">2. Custom Pricing</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">We evaluate the job and send you an explicit, fixed-rate quote directly to your inbox.</p>
                 </div>
                 <div>
-                    <h4 style="color: var(--accent); margin-bottom: 0.25rem;">3. Execution</h4>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Development begins with milestone updates, culminating in a clean deployment and delivery.</p>
+                    <h4 style="color: var(--accent-glow); margin-bottom: 0.25rem; font-size: 1.1rem;">3. Blasting Day</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Our rig rolls out on schedule, handles the execution, and clears everything out completely.</p>
                 </div>
             </section>
 
             <section class="card">
-                <h3 style="margin-bottom: 1.5rem;">Project Request Form</h3>
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Quote Request Form</h3>
                 <form id="bookingForm">
                     <div class="form-group">
-                        <label for="name">Name / Organization</label>
-                        <input type="text" id="name" required placeholder="Your name">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required placeholder="John Doe">
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" required placeholder="you@example.com">
+                        <input type="email" id="email" required placeholder="name@example.com">
                     </div>
                     <div class="form-group">
-                        <label for="projectType">Project Type</label>
-                        <select id="projectType">
-                            <option value="web">Web Application</option>
-                            <option value="scripting">Custom Scripting / Automation</option>
-                            <option value="other">Other Technical Request</option>
+                        <label for="washType">Primary Service Needed</label>
+                        <select id="washType">
+                            <option value="driveway">Driveway & Sidewalk Concrete</option>
+                            <option value="siding">Full House Soft-Wash Siding</option>
+                            <option value="deck">Deck / Fence Restoration</option>
+                            <option value="multi">Full Property Package Combo</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="details">Project Details</label>
-                        <textarea id="details" rows="4" required placeholder="Describe what you want built..."></textarea>
+                        <label for="details">Property Notes / Condition</label>
+                        <textarea id="details" rows="4" required placeholder="Let us know approximate sizes or specific problem stains..."></textarea>
                     </div>
-                    <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Submit Request</button>
+                    <button type="submit" class="btn" style="width: 100%;">Send Estimate Request</button>
                 </form>
-                <div id="formFeedback" style="margin-top: 1rem; text-align: center; font-size: 0.95rem; display: none;"></div>
+                <div id="formFeedback" style="margin-top: 1.25rem; text-align: center; font-size: 1rem; font-weight: 600; display: none;"></div>
             </section>
 
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 Portfolio. All rights reserved.</p>
+        <p>&copy; 2026 HydroBlast Premium Powerwashing. All rights reserved.</p>
     </footer>
 
     <script>
@@ -85,13 +86,13 @@
             const feedback = document.getElementById('formFeedback');
 
             if (name && email && details) {
-                feedback.style.color = '#4ade80'; 
-                feedback.textContent = 'Thank you! Your request has been sent successfully.';
+                feedback.style.color = '#22c55e'; 
+                feedback.textContent = 'Awesome! Your project details have been recorded. We will be in touch soon.';
                 feedback.style.display = 'block';
                 document.getElementById('bookingForm').reset();
             } else {
                 feedback.style.color = '#f87171'; 
-                feedback.textContent = 'Please fill out all required fields.';
+                feedback.textContent = 'Please complete all fields before submitting.';
                 feedback.style.display = 'block';
             }
         });
