@@ -5,6 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book a Wash | HydroBlast</title>
     <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Extra custom styles for the new contact section */
+        .contact-box {
+            background-color: var(--bg-secondary);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+        }
+        .contact-box h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        .contact-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .contact-link {
+            font-size: 1.3rem;
+            color: var(--accent-glow);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.2s ease, transform 0.2s ease;
+            display: inline-block;
+            width: fit-content;
+        }
+        .contact-link:hover {
+            color: #ffffff;
+            transform: translateX(4px);
+        }
+        .action-hint {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 0.1rem;
+        }
+    </style>
 </head>
 <body>
 
@@ -21,22 +72,37 @@
         <div class="split-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
             
             <section>
-                <h1 style="font-size: 2.8rem; margin-bottom: 1.5rem; font-weight: 800;">Get Your <span>Quote</span></h1>
-                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.1rem;">
-                    Scheduling an appointment or getting a square-footage estimate is simple. Here is how our process works:
+                <h1 style="font-size: 2.8rem; margin-bottom: 1rem; font-weight: 800;">Get Your <span>Quote</span></h1>
+                <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem;">
+                    Scheduling an appointment or getting a square-footage estimate is simple. 
                 </p>
                 
-                <div style="margin-bottom: 1.5rem;">
-                    <h4 style="color: var(--accent-glow); margin-bottom: 0.25rem; font-size: 1.1rem;">1. Submit Details</h4>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Tell us what surfaces need detailing and provide your basic property layout.</p>
-                </div>
-                <div style="margin-bottom: 1.5rem;">
-                    <h4 style="color: var(--accent-glow); margin-bottom: 0.25rem; font-size: 1.1rem;">2. Custom Pricing</h4>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">We evaluate the job scope and send you an explicit, fixed-rate quote directly to your email.</p>
-                </div>
-                <div>
-                    <h4 style="color: var(--accent-glow); margin-bottom: 0.25rem; font-size: 1.1rem;">3. Blasting Day</h4>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Our truck rolls out completely on schedule, handles the execution, and clears out completely.</p>
+                <div class="contact-box">
+                    <h2>Contact one of these</h2>
+                    <div class="contact-methods">
+                        
+                        <!-- Call Protocol -->
+                        <div class="contact-item">
+                            <span class="contact-label">Call Us Directly</span>
+                            <a href="tel:+11234567890" class="contact-link">Call +1 1234567890</a>
+                            <span class="action-hint">Tap to launch phone dialer</span>
+                        </div>
+
+                        <!-- Text Protocol -->
+                        <div class="contact-item" style="margin-top: 0.5rem;">
+                            <span class="contact-label">Text Us Anytime</span>
+                            <a href="sms:+11234567890" class="contact-link">Text +1 1234567890</a>
+                            <span class="action-hint">Tap to start SMS thread</span>
+                        </div>
+
+                        <!-- Mail Protocol -->
+                        <div class="contact-item" style="margin-top: 0.5rem;">
+                            <span class="contact-label">Email Our Team</span>
+                            <a href="mailto:examplepowerwashing@outlook.com?subject=Powerwashing%20Quote%20Request" class="contact-link">examplepowerwashing@outlook.com</a>
+                            <span class="action-hint">Tap to open mail client</span>
+                        </div>
+
+                    </div>
                 </div>
             </section>
 
