@@ -6,37 +6,45 @@
     <title>Book a Wash | HydroBlast</title>
     <link rel="stylesheet" href="./style.css">
     <style>
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding-top: 2rem;
+        }
         .contact-box {
             background-color: var(--bg-secondary);
             border: 1px solid #334155;
             border-radius: 12px;
-            padding: 2.5rem;
-            margin-top: 1rem;
+            padding: 3rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
         .contact-box h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            margin-bottom: 2rem;
             color: #ffffff;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
         }
         .contact-methods {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 2rem;
         }
         .contact-item {
             display: flex;
             flex-direction: column;
-            gap: 0.25rem;
+            gap: 0.5rem;
         }
         .contact-label {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: var(--text-muted);
-            font-weight: 600;
+            font-weight: 700;
         }
         .contact-link {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: var(--accent-glow);
             text-decoration: none;
             font-weight: 700;
@@ -46,10 +54,10 @@
         }
         .contact-link:hover {
             color: #ffffff;
-            transform: translateX(4px);
+            transform: translateX(6px);
         }
         .action-hint {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
             font-style: italic;
         }
@@ -67,68 +75,37 @@
     </nav>
 
     <main>
-        <div class="split-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+        <div class="contact-container">
             
-            <section>
-                <h1 style="font-size: 2.8rem; margin-bottom: 1rem; font-weight: 800;">Get Your <span>Quote</span></h1>
-                
-                <div class="contact-box">
-                    <h2>Contact one of these</h2>
-                    <div class="contact-methods">
-                        
-                        <!-- Call Option -->
-                        <div class="contact-item">
-                            <span class="contact-label">Call</span>
-                            <a href="tel:+11234567890" class="contact-link">Call +1 1234567890</a>
-                            <span class="action-hint">Tap to make a phone call</span>
-                        </div>
-
-                        <!-- Text Option -->
-                        <div class="contact-item">
-                            <span class="contact-label">Text</span>
-                            <a href="sms:+11234567890" class="contact-link">Text +1 1234567890</a>
-                            <span class="action-hint">Tap to start a text message</span>
-                        </div>
-
-                        <!-- Email Option -->
-                        <div class="contact-item">
-                            <span class="contact-label">Mail</span>
-                            <a href="mailto:examplepowerwashing@outlook.com" class="contact-link">examplepowerwashing@outlook.com</a>
-                            <span class="action-hint">Tap to send an email</span>
-                        </div>
-
+            <h1 style="font-size: 3rem; text-align: center; font-weight: 800;">Get In <span>Touch</span></h1>
+            
+            <div class="contact-box">
+                <h2>Contact one of these</h2>
+                <div class="contact-methods">
+                    
+                    <!-- Call Option -->
+                    <div class="contact-item">
+                        <span class="contact-label">Call</span>
+                        <a href="tel:+11234567890" class="contact-link">Call +1 1234567890</a>
+                        <span class="action-hint">Tap to make a phone call</span>
                     </div>
+
+                    <!-- Text Option -->
+                    <div class="contact-item">
+                        <span class="contact-label">Text</span>
+                        <a href="sms:+11234567890" class="contact-link">Text +1 1234567890</a>
+                        <span class="action-hint">Tap to start a text message</span>
+                    </div>
+
+                    <!-- Email Option -->
+                    <div class="contact-item">
+                        <span class="contact-label">Mail</span>
+                        <a href="mailto:examplepowerwashing@outlook.com" class="contact-link">examplepowerwashing@outlook.com</a>
+                        <span class="action-hint">Tap to send an email</span>
+                    </div>
+
                 </div>
-            </section>
-
-            <section class="card">
-                <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Quote Request Form</h3>
-                <form id="bookingForm">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" required placeholder="John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" required placeholder="name@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="washType">Primary Service Needed</label>
-                        <select id="washType">
-                            <option value="driveway">Driveway & Sidewalk Concrete</option>
-                            <option value="siding">Full House Soft-Wash Siding</option>
-                            <option value="deck">Deck / Fence Restoration</option>
-                            <option value="multi">Full Property Package Combo</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="details">Property Notes / Condition</label>
-                        <textarea id="details" rows="4" required placeholder="Let us know approximate sizes or specific problem areas..."></textarea>
-                    </div>
-                    <button type="submit" class="btn" style="width: 100%;">Send Estimate Request</button>
-                </form>
-                <div id="formFeedback" style="margin-top: 1.25rem; text-align: center; font-size: 1rem; font-weight: 600; display: none;"></div>
-            </section>
+            </div>
 
         </div>
     </main>
@@ -137,26 +114,5 @@
         <p>&copy; 2026 HydroBlast Premium Powerwashing. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const details = document.getElementById('details').value.trim();
-            const feedback = document.getElementById('formFeedback');
-
-            if (name && email && details) {
-                feedback.style.color = '#22c55e'; 
-                feedback.textContent = 'Awesome! Your project details have been recorded. We will be in touch soon.';
-                feedback.style.display = 'block';
-                document.getElementById('bookingForm').reset();
-            } else {
-                feedback.style.color = '#f87171'; 
-                feedback.textContent = 'Please complete all fields before submitting.';
-                feedback.style.display = 'block';
-            }
-        });
-    </script>
 </body>
 </html>
