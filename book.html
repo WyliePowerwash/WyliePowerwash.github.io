@@ -6,105 +6,108 @@
     <title>Book a Wash | Wylie Wilson Powerwashing</title>
     <link rel="stylesheet" href="./style.css">
     <style>
-        /* Container set to a perfect size to keep the boxes wide but balanced */
+        /* Expanded the entire section wrapper to give the layout room to sit wide */
         .contact-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 3rem 1.5rem 5rem 1.5rem;
+            padding: 4rem 2rem 6rem 2rem;
         }
 
-        /* Flex container that spreads the boxes out evenly across the screen */
+        /* --- Upgraded to a powerful heavy-duty grid layout --- */
         .contact-flex-layout {
-            display: flex;
-            flex-direction: row;
-            gap: 2.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1.4fr; /* Form side is given extra broad territory */
+            gap: 3.5rem;
             margin-top: 3rem;
-            align-items: flex-start;
-            justify-content: space-between;
             width: 100%;
         }
 
-        /* Fattened boxes: guaranteed to scale out wide and look substantial */
+        /* Maximum fatter boxes with massive padding */
         .contact-box {
-            flex: 1;
-            min-width: 450px; /* Forces the boxes to maintain a fat, wide profile */
             background-color: var(--bg-secondary);
             border: 1px solid #334155;
-            border-radius: 16px;
-            padding: 3.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 4.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.15);
             box-sizing: border-box;
+            width: 100%;
         }
 
         .contact-box h2 {
-            font-size: 2.25rem;
-            margin-bottom: 2.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
             color: #ffffff;
-            border-bottom: 3px solid var(--accent);
-            padding-bottom: 0.75rem;
+            border-bottom: 4px solid var(--accent);
+            padding-bottom: 1rem;
         }
         .contact-methods {
             display: flex;
             flex-direction: column;
-            gap: 2.5rem;
+            gap: 3rem;
         }
         .contact-item {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.85rem;
         }
         .contact-label {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
             color: var(--text-muted);
-            font-weight: 700;
+            font-weight: 800;
         }
+        
+        /* --- FIX: Forces text wrapping so it drops down instead of breaking boxes --- */
         .contact-link {
-            font-size: 1.75rem;
+            font-size: 1.85rem;
             color: var(--accent-glow);
             text-decoration: none;
             font-weight: 700;
             transition: color 0.2s ease, transform 0.2s ease;
-            display: inline-block;
-            width: fit-content;
+            display: block;
+            width: 100%;
+            word-break: break-all;      /* Breaks ultra long words if absolutely forced */
+            overflow-wrap: break-word;  /* Standard behavior: drops text down to new lines */
+            white-space: normal;        /* Prevents text from forcing a single line block */
+            line-height: 1.3;
         }
         .contact-link:hover {
             color: #ffffff;
             transform: translateX(8px);
         }
         .action-hint {
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: var(--text-muted);
             font-style: italic;
         }
 
-        /* --- Fattened Form Layout --- */
+        /* --- Fatter Form Inputs Layout --- */
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
-            margin-bottom: 2rem;
-            width: 100%; /* Spans full width of the box */
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            width: 100%;
         }
         .form-group label {
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             text-transform: uppercase;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.08em;
             color: var(--text-muted);
             font-weight: 700;
         }
-        /* Thick inputs with large padding to feel heavy and robust */
+        /* Heavy inputs with massive inner space and clean sizing fields */
         .form-group input, 
         .form-group textarea {
             width: 100%;
-            padding: 1.1rem 1.25rem;
+            padding: 1.3rem 1.5rem;
             background-color: #1e293b;
             border: 2px solid #475569;
-            border-radius: 8px;
+            border-radius: 10px;
             color: #ffffff;
             font-family: inherit;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
             box-sizing: border-box;
         }
@@ -112,27 +115,27 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--accent-glow, #38bdf8);
-            box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+            box-shadow: 0 0 0 5px rgba(56, 189, 248, 0.2);
         }
         .form-group textarea {
             resize: vertical;
-            min-height: 140px;
+            min-height: 160px;
         }
         
-        /* Large submit button matching the full width */
+        /* Massive heavy submit button */
         .submit-btn {
             background-color: var(--accent, #0ea5e9);
             color: #ffffff;
             border: none;
-            border-radius: 8px;
-            padding: 1.25rem 2.5rem;
-            font-size: 1.25rem;
+            border-radius: 10px;
+            padding: 1.5rem 3rem;
+            font-size: 1.4rem;
             font-weight: 800;
             cursor: pointer;
             transition: background-color 0.2s ease, transform 0.1s ease;
             width: 100%;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
             margin-top: 1.5rem;
             box-sizing: border-box;
         }
@@ -143,15 +146,25 @@
             transform: scale(0.97);
         }
 
-        /* Responsive snap: drops to single column if screen drops below 1024px */
-        @media (max-width: 1024px) {
+        /* Desktop breakpoints: gracefully folds when screen narrows down */
+        @media (max-width: 1200px) {
             .contact-flex-layout {
-                flex-direction: column;
-                gap: 2.5rem;
+                grid-template-columns: 1fr; /* Snaps to 1 broad column layout */
+                gap: 3rem;
             }
             .contact-box {
-                min-width: 100%; /* Takes up full screen width on smaller tabs/phones */
-                padding: 2.5rem;
+                padding: 3.5rem;
+            }
+            .contact-link {
+                font-size: 1.65rem; /* Scales font down slightly on tablets to fit smoothly */
+            }
+        }
+        @media (max-width: 640px) {
+            .contact-box {
+                padding: 2rem;
+            }
+            .contact-link {
+                font-size: 1.35rem;
             }
         }
     </style>
@@ -170,7 +183,7 @@
     <main>
         <div class="contact-container">
             
-            <h1 style="font-size: 3.5rem; text-align: center; font-weight: 800; margin-bottom: 1rem;">Get In <span>Touch</span></h1>
+            <h1 style="font-size: 4rem; text-align: center; font-weight: 800; margin-bottom: 2rem;">Get In <span>Touch</span></h1>
             
             <div class="contact-flex-layout">
 
