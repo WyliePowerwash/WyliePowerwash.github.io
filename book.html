@@ -6,30 +6,34 @@
     <title>Book a Wash | Wylie Wilson Powerwashing</title>
     <link rel="stylesheet" href="./style.css">
     <style>
-        /* Expanded max-width to give the fatter boxes plenty of breathing room */
+        /* Container set to a perfect size to keep the boxes wide but balanced */
         .contact-container {
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 3rem 1.5rem 5rem 1.5rem;
         }
 
-        /* Side-by-side flex setup with a larger gap */
+        /* Flex container that spreads the boxes out evenly across the screen */
         .contact-flex-layout {
             display: flex;
             flex-direction: row;
-            gap: 3rem;
+            gap: 2.5rem;
             margin-top: 3rem;
             align-items: flex-start;
+            justify-content: space-between;
+            width: 100%;
         }
 
-        /* Fattened boxes: increased padding from 3rem to 4rem for a spacious look */
+        /* Fattened boxes: guaranteed to scale out wide and look substantial */
         .contact-box {
             flex: 1;
+            min-width: 450px; /* Forces the boxes to maintain a fat, wide profile */
             background-color: var(--bg-secondary);
             border: 1px solid #334155;
             border-radius: 16px;
-            padding: 4rem;
+            padding: 3.5rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
         }
 
         .contact-box h2 {
@@ -75,12 +79,13 @@
             font-style: italic;
         }
 
-        /* --- Fattened Form Elements --- */
+        /* --- Fattened Form Layout --- */
         .form-group {
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
             margin-bottom: 2rem;
+            width: 100%; /* Spans full width of the box */
         }
         .form-group label {
             font-size: 1.05rem;
@@ -89,7 +94,7 @@
             color: var(--text-muted);
             font-weight: 700;
         }
-        /* Increased inner padding and font-size for a heavier, higher-end feel */
+        /* Thick inputs with large padding to feel heavy and robust */
         .form-group input, 
         .form-group textarea {
             width: 100%;
@@ -101,6 +106,7 @@
             font-family: inherit;
             font-size: 1.1rem;
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            box-sizing: border-box;
         }
         .form-group input:focus, 
         .form-group textarea:focus {
@@ -113,7 +119,7 @@
             min-height: 140px;
         }
         
-        /* Large, bold submit button */
+        /* Large submit button matching the full width */
         .submit-btn {
             background-color: var(--accent, #0ea5e9);
             color: #ffffff;
@@ -128,6 +134,7 @@
             text-transform: uppercase;
             letter-spacing: 0.08em;
             margin-top: 1.5rem;
+            box-sizing: border-box;
         }
         .submit-btn:hover {
             background-color: var(--accent-glow, #38bdf8);
@@ -136,13 +143,14 @@
             transform: scale(0.97);
         }
 
-        /* Responsive breakdown for tablet/mobile viewports */
-        @media (max-width: 968px) {
+        /* Responsive snap: drops to single column if screen drops below 1024px */
+        @media (max-width: 1024px) {
             .contact-flex-layout {
                 flex-direction: column;
-                gap: 2rem;
+                gap: 2.5rem;
             }
             .contact-box {
+                min-width: 100%; /* Takes up full screen width on smaller tabs/phones */
                 padding: 2.5rem;
             }
         }
@@ -220,7 +228,7 @@
                             <textarea id="description" name="description" required placeholder="e.g., Concrete driveway, back patio deck, vinyl house siding, etc."></textarea>
                         </div>
 
-                        <!-- New Square Footage / Detail Field -->
+                        <!-- Square Footage Details Field -->
                         <div class="form-group">
                             <label for="size-details">Approximate Size / Area Details</label>
                             <input type="text" id="size-details" name="size_details" placeholder="e.g., 345 sq ft, 2-car driveway, 2-story house">
