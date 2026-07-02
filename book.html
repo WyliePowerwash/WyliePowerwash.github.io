@@ -10,6 +10,7 @@
             max-width: 600px;
             margin: 0 auto;
             padding-top: 2rem;
+            padding-bottom: 4rem;
         }
         .contact-box {
             background-color: var(--bg-secondary);
@@ -61,6 +62,63 @@
             color: var(--text-muted);
             font-style: italic;
         }
+
+        /* --- New Booking Form Styles --- */
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: #1e293b; /* Fallback dark background matching typical secondary styles */
+            border: 1px solid #475569;
+            border-radius: 6px;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+        }
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-glow, #38bdf8);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .submit-btn {
+            background-color: var(--accent, #0ea5e9);
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 1rem;
+        }
+        .submit-btn:hover {
+            background-color: var(--accent-glow, #38bdf8);
+        }
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
     </style>
 </head>
 <body>
@@ -79,6 +137,7 @@
             
             <h1 style="font-size: 3rem; text-align: center; font-weight: 800;">Get In <span>Touch</span></h1>
             
+            <!-- Quick Contact Box -->
             <div class="contact-box">
                 <h2>Contact one of these</h2>
                 <div class="contact-methods">
@@ -105,6 +164,36 @@
                     </div>
 
                 </div>
+            </div>
+
+            <!-- Booking Form Box -->
+            <div class="contact-box">
+                <h2>Or Book Directly Online</h2>
+                <form action="https://formspree.io/f/xwvdwrrg" method="POST">
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address Of The Thing You Want To Powerwash</label>
+                        <input type="text" id="address" name="address" required placeholder="123 Main St, City, State">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">What Do You Want Me To Powerwash?</label>
+                        <textarea id="description" name="description" required placeholder="e.g., Driveway, Back deck, House siding, etc."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Form</button>
+
+                </form>
             </div>
 
         </div>
