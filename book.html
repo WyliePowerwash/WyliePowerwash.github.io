@@ -121,6 +121,12 @@
             resize: vertical;
             min-height: 160px;
         }
+
+        /* Color schemes the calendar picker icon to look nice in dark mode */
+        .form-group input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            cursor: pointer;
+        }
         
         /* Massive heavy submit button */
         .submit-btn {
@@ -245,6 +251,12 @@
                         <div class="form-group">
                             <label for="size-details">Approximate Size / Area Details</label>
                             <input type="text" id="size-details" name="size_details" placeholder="e.g., 345 sq ft, 2-car driveway, 2-story house">
+                        </div>
+
+                        <!-- Preferred Date Picker Field -->
+                        <div class="form-group">
+                            <label for="preferred-date">Preferred Wash Date</label>
+                            <input type="date" id="preferred-date" name="preferred_date">
                         </div>
 
                         <button type="submit" class="submit-btn">Submit Form</button>
